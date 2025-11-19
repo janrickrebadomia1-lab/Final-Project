@@ -1,0 +1,186 @@
+/* ===================== ADMIN LOGIN CSS (SCOPED & BLOODSYNC THEME) ===================== */
+
+/* Reset and common styles */
+.admin-login-container * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Container */
+.admin-login-container {
+  background: linear-gradient(to right, #ffffff, rgb(151, 7, 7));
+  border-radius: 150px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
+  width: 768px;
+  max-width: 95%;
+  min-height: 500px;
+  margin: 80px auto; /* Center horizontally with top margin */
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Form styling */
+.admin-login-container form {
+  background-color: #fff5f5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  width: 80%;
+  height: 100%;
+  text-align: center;
+  border-radius: 20px;
+  box-shadow: inset 0 0 20px rgba(177, 0, 0, 0.1);
+}
+
+/* Inputs */
+.admin-login-container input {
+  background-color: #fff0f0;
+  border: 1px solid #b10000;
+  border-radius: 8px;
+  width: 100%;
+  padding: 12px 15px;
+  margin: 10px 0;
+  font-size: 14px;
+  outline: none;
+  color: #250202;
+  transition: border-color 0.3s, transform 0.2s;
+}
+
+.admin-login-container input::placeholder {
+  color: #7a1a1a;
+}
+
+.admin-login-container input:focus {
+  border-color: #8a0000;
+  transform: scale(1.02);
+}
+
+/* Buttons */
+.admin-login-container button {
+  background-color: #b10000;
+  color: #fff;
+  padding: 12px 50px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  margin-top: 15px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.admin-login-container button:hover {
+  background-color: #8a0000;
+  transform: scale(1.05);
+}
+
+.admin-login-container button.hidden {
+  background-color: transparent;
+  border-color: #fff;
+}
+
+/* Sign-in / Sign-up panels */
+.admin-login-container .sign-in,
+.admin-login-container .sign-up {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  transition: all 0.6s ease-in-out;
+}
+
+.admin-login-container .sign-in {
+  left: 0;
+  width: 50%;
+  z-index: 2;
+}
+
+.admin-login-container.active .sign-in {
+  transform: translateX(100%);
+}
+
+.admin-login-container .sign-up {
+  left: 0;
+  width: 50%;
+  opacity: 0;
+  z-index: 1;
+}
+
+.admin-login-container.active .sign-up {
+  transform: translateX(100%);
+  opacity: 1;
+  z-index: 5;
+  animation: move 0.6s;
+}
+
+/* Toggle container & panel centered */
+.admin-login-container .toogle-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 50%;
+  height: 50%;
+  transform: translate(-50%, -50%); /* Center horizontally & vertically */
+  overflow: hidden;
+  border-radius: 150px;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.6s ease-in-out;
+}
+
+.admin-login-container.active .toogle-container {
+  transform: translate(-50%, -50%);
+}
+
+.admin-login-container .toogle {
+  background-color: #b10000;
+  color: #fff;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.6s ease-in-out;
+}
+
+.admin-login-container .toogle-panel {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+}
+
+/* Links */
+.admin-login-container .link a {
+  color: #fff;
+  font-size: 13px;
+  text-decoration: none;
+}
+
+/* Animations */
+@keyframes move {
+  0%, 49.99% { opacity: 0; z-index: 1; }
+  50%, 100% { opacity: 1; z-index: 5; }
+}
+
+/* Span / panel text */
+.admin-login-container span,
+.admin-login-container .toogle-panel h1,
+.admin-login-container .toogle-panel p {
+  color: #fff;
+}
